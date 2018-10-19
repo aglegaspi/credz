@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <br>
+            <h3>Credits Index Page</h3>
+            
+            <%= link_to '[Create New Credit]', new_credit_path %>  
+
+            <br><br>
+
+            <% @credits.each do |disp| %>
+                <%= disp.song_title %> by <%= disp.artist.artist_name %> <br>
+            <% end %>
+
+        </div>
+    </div>
+</div>

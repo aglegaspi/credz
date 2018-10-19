@@ -11,4 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery/dist/jquery.js
+//= require axios/dist/axios.js
+//= require bootstrap/dist/js/bootstrap.js
+//= require select2/dist/js/select2.js
 //= require_tree .
+
+$(document).ready(function() {
+    $('#select_two').select2();
+});

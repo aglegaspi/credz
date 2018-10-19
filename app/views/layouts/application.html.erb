@@ -9,7 +9,22 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= controller_name %> <%= action_name %>">
+
+  <a href="<%= root_path %>">Credz</a>
+
+    <%# checks if user is logged in via devise and loads the following code if true.
+    if the user is not logged in the code will NOT load %>
+      <% if current_user %>
+        <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE', class: 'nav-link' %>
+      <% else %>
+
+        <%= link_to '[Sign Up]', new_user_registration_path %>  
+        <%= link_to '[Log In]', new_user_session_path %>  
+
+      <% end %>
+
+  <%= yield %>
+
   </body>
 </html>
