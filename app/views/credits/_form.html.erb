@@ -1,18 +1,18 @@
 <%= form_for [@credit] do |f| %>
 
     <div>
-        <%= f.label :song_title %>
+        <%= f.label "Song Title" %>
         <%= f.text_field :song_title, class: 'form-control' %>
     </div>
 
     <div>
-        <%= f.label :mix_version %>
+        <%= f.label "Mix Version" %>
         <%= f.text_field :mix_version, class: 'form-control' %>
     </div>
 
     <div>
-        <%= f.label :artist_id %>
-        <%= f.select :artist_id, options_for_select(artists_for_select), {prompt: ' '}, class: "form-control", id: 'select_two' %>
+        <%= f.label "Artist Name" %>
+        <%= f.select :artist_id, options_for_select(artists_for_select), {}, class: "form-control", id: 'select_two' %>
         <%= link_to 'Add New Artists', new_artist_path %>
     </div>
 
