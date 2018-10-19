@@ -37,7 +37,7 @@ class CreditsController < ApplicationController
 
     private
     def credit_params
-        params.require(:credit).permit(:song_title,:mix_version,:artist_id)
+        params.require(:credit).permit(:song_title,:mix_version, artist_ids: [])
     end
 
 end

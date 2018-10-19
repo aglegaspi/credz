@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_183341) do
+ActiveRecord::Schema.define(version: 2018_10_19_194052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,18 @@ ActiveRecord::Schema.define(version: 2018_10_19_183341) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "artists_credits", id: false, force: :cascade do |t|
+    t.bigint "artist_id"
+    t.bigint "credit_id"
+    t.index ["artist_id"], name: "index_artists_credits_on_artist_id"
+    t.index ["credit_id"], name: "index_artists_credits_on_credit_id"
+  end
+
   create_table "credits", force: :cascade do |t|
     t.string "song_title"
     t.string "mix_version"
-    t.bigint "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_credits_on_artist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +47,6 @@ ActiveRecord::Schema.define(version: 2018_10_19_183341) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "credits", "artists"
+  add_foreign_key "artists_credits", "artists"
+  add_foreign_key "artists_credits", "credits"
 end

@@ -1,3 +1,4 @@
 class Credit < ApplicationRecord
-  belongs_to :artist
+  has_many :artists_credits
+  has_many :artists, through: :artists_credits
 end
