@@ -1,0 +1,3 @@
+<%# $('#select_two').html("<%= escape_javascript options_from_collection_for_select(@artists, :id, :name) %>"); %>
+
+$('#select_two').append('<%= j render(@artist) %>')

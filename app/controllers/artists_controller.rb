@@ -6,14 +6,13 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        @artist = Artist.create(artist_params)
-        if @artist.save
-            #flash[:success] = "Artist '#{@artist.artist_name}' created successfully."
-            respond_to { |format|
-                format.html { redirect_to new_credit_path }
-                format.js
-            }
+        @artist = Artist.create!(artist_params)
+        
+        respond_to do |format|
+            format.html { redirect_to new_credit_path }
+            format.js
         end
+        
     end
 
     def new
@@ -45,4 +44,5 @@ class ArtistsController < ApplicationController
         
         params.require(:artist).permit(:artist_name)
     end
+
 end

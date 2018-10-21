@@ -1,4 +1,5 @@
-<%= form_for @artist do |f| %>
+<%= form_for @artist, remote: true do |f| %>
+
 
     <div>
         <%= f.label :artist_name %>
