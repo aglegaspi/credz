@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :artists
   resources :credits
+
+  get "artists/new" => 'artist#new', :as => :newartist
   
 end

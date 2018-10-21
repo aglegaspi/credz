@@ -4,30 +4,29 @@
             <br>
             <h3>Create New Credits</h3>
             
-            <%= render 'form' %>
+            <%= render "form" %>
 
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+       <%#---  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>  ---%>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ... render artist form
-        ... form submition should be an ajax request to the artists#create action
-        ... the artists#create action should respond with teh artists name and id
-        ... willl need to take the name and id from the response and add them to the select2 dropdown using javascript
+        
+        <%= render partial: "artists/new", locals: { body: 'Add New Instructor', url: new_artist_path, modalname: "#addInstructorModal" }  %>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    
     </div>
   </div>
 </div>

@@ -37,8 +37,7 @@ class ArtistsController < ApplicationController
 
     private
     def artist_params
-        #will return somethine that looks like this:
-        #{name: '...', :description: '...'}
+        
         params.require(:artist).permit(:artist_name)
     end
 end

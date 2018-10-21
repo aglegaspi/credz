@@ -15,8 +15,12 @@
 //= require axios/dist/axios.js
 //= require bootstrap/dist/js/bootstrap.js
 //= require select2/dist/js/select2.js
+//= require bootstrap/js/dist/modal.js
 //= require_tree .
 
 $(document).ready(function() {
     $('#select_two').select2();
+
+    $("#modal-window").find(".modal-content").html("<%= j (render 'artists/form') %>");
+    $("#modal-window").modal();
 });
