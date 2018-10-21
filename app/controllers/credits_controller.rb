@@ -3,20 +3,17 @@ class CreditsController < ApplicationController
     
     def index
         @credits = Credit.all
-        @artists = Artist.all
     end
 
     def create
         Credit.create(credit_params)
-        Artist.create(artist_params)
        
         redirect_to credits_path
     end
 
     def new
         @credit = Credit.new
-        @artist = Artist.new
-        
+        @artist = Artist.new    
 
     end
 
@@ -52,9 +49,6 @@ class CreditsController < ApplicationController
         params.require(:credit).permit(:song_title,:mix_version, artist_ids: [])
     end
 
-    def artist_params
-        params.require(:artist).permit(:artist_name)
-    end
 
 
 

@@ -13,9 +13,7 @@
     <div>
         <%= f.label "Artist Name" %>
         <%= f.select :artist_ids, options_for_select(artists_for_select), {}, multiple: "true", class: "form-control", id: 'select_two' %>
-        <%# link_to 'Add New Artists', new_artist_path, data: {toggle: 'modal', target: '#exampleModal'} %>
-        <%= link_to 'Add New Artist', newartist_path, remote: "true", data: {toggle: 'modal', target: '#modal-window'} %>
-
+        <%= link_to 'Add New Artists', new_artist_path, data: {toggle: 'modal', target: '#exampleModal'} %>
         
     </div>
 

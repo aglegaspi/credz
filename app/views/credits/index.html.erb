@@ -9,7 +9,8 @@
             <br><br>
 
             <% @credits.each do |disp| %>
-                <%= disp.song_title %> by 
+                <%= disp.song_title %> 
+                <% if disp.mix_version? %> (<%= disp.mix_version %>) <% end %> by 
                 <% disp.artists.each do |artist|%>
                 <%= artist.artist_name %> <% end %> <br>
             <% end %>

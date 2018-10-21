@@ -6,9 +6,14 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        Artist.create(artist_params)
-       
-        redirect_to artists_path
+        @artist = Artist.create(artist_params)
+        if @artist.save
+            #flash[:success] = "Artist '#{@artist.artist_name}' created successfully."
+            respond_to { |format|
+                format.html { redirect_to new_credit_path }
+                format.js
+            }
+        end
     end
 
     def new

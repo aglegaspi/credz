@@ -7,7 +7,7 @@
 
     <br>
     <div>   
-        <%= f.submit "Submit", class: 'btn btn-light' %>
+        <%= f.submit "Submit", remote: true, data: { toggle: "modal", target: "#exampleModal" }, class: 'btn btn-light' %>
     </div>
 
 <% end %>
