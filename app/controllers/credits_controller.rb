@@ -17,13 +17,6 @@ class CreditsController < ApplicationController
 
     end
 
-    def newartist
-        respond_to do |format|
-          format.html
-          format.js
-        end
-    end
-
     def edit 
         @credit = Credit.find(params[:id])
     end

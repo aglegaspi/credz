@@ -1,15 +1,10 @@
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <br>
-            <h3>Create New Credits</h3>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+  <br>
+  <h3>Create New Credits</h3>
             
-            <%= render "form" %>
-
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+    <%= render "form" %>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -23,7 +18,7 @@
       </div>
       <div class="modal-body">
         
-        <%= render partial: "artists/new", locals: { body: 'Add New Instructor', url: new_artist_path, modalname: "#addInstructorModal", remote: "true" }  %>
+        <%= render partial: "artists/form", locals: { body: 'Add New Artist', url: new_artist_path, modalname: "#addInstructorModal", remote: "true" }  %>
 
       </div>
     

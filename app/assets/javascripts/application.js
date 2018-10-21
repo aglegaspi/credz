@@ -21,6 +21,5 @@
 $(document).ready(function() {
     $('#select_two').select2();
 
-    $("#modal-window").find(".modal-content").html("<%= j (render 'artists/form') %>");
-    $("#modal-window").modal();
+    
 });
