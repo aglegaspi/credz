@@ -13,7 +13,7 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
 
-  <a href="<%= root_path %>">Credz</a>
+  <%= link_to "Credz", root_path, class: "logo" %>
 
     <%# checks if user is logged in via devise and loads the following code if true.
     if the user is not logged in the code will NOT load %>
