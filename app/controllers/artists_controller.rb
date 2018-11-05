@@ -6,10 +6,9 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        # if statement first
-        # they exist what do you want to happen
+
         @artist = Artist.create!(artist_params)
-        
+    
         respond_to do |format|
             format.html { redirect_to new_credit_path }
             format.js
