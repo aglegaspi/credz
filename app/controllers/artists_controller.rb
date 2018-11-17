@@ -7,13 +7,22 @@ class ArtistsController < ApplicationController
 
     def create
 
-        @artist = Artist.create!(artist_params)
-    
-        respond_to do |format|
-            format.html { redirect_to new_credit_path }
-            format.js
-        end
+        @artist = Artist.new(artist_params)
         
+        @artist.save
+
+        if @artist.save
+            respond_to do |format|
+                format.html { redirect_to new_credit_path }
+                format.js
+            end
+        else
+            respond_to do |format|
+                format.html { redirect_to new_artist_path }
+               
+            end        
+        end
+
     end
 
     def new

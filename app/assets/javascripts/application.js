@@ -20,6 +20,5 @@
 
 $(document).ready(function() {
     $('#select_two').select2();
-
     
 });
