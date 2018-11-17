@@ -12,15 +12,14 @@ class ArtistsController < ApplicationController
         @artist.save
 
         if @artist.save
+            flash[:success] = 'The artist has been added!'
             respond_to do |format|
                 format.html { redirect_to new_credit_path }
                 format.js
             end
         else
-            respond_to do |format|
-                format.html { redirect_to new_artist_path }
-               
-            end        
+            render json: {status: 'error', message: 'This arists already exists!'}
+             
         end
 
     end

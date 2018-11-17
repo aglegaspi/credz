@@ -12,6 +12,7 @@
  *
  *= require bootstrap/scss/bootstrap
  *= require select2/dist/css/select2.css
+ *= require toastr/toastr
  *= require_tree .
  *= require_self
  */
@@ -23,10 +24,59 @@
  }
 
  body {
-    margin: 1em;
     background-color: #fbacac;
  }
 
  .logo {
-     font-size: 7vw;
+   color: white;
+   margin-left: 0.25em;
+   font-size: 7vw;
  }
+
+ .form-control {
+   border: 0px solid #ced4da;
+   border-radius: 0px;
+ 
+}
+
+a {
+   color: #ffffff;
+   text-decoration: none;
+   background-color: transparent;
+   -webkit-text-decoration-skip: objects;
+ }
+
+ a:hover {
+   color: #ffffff;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+   border: 0px;
+   outline: 0;
+   width: 100%;
+}
+
+.select2-container--default .select2-selection--multiple {
+   background-color: white;
+   border: 1px solid #aaa;
+   border-radius: 0px;
+   cursor: text;
+   width: 100%;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+   background-color: #484e56;
+   color: white;
+   width: 100%;
+}
+
+.select2-container--open .select2-dropdown--above {
+   border-bottom: none;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+   border: 0;
+   border-radius: 0;
+   width: 100%;
+}

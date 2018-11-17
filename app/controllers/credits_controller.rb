@@ -1,14 +1,23 @@
 class CreditsController < ApplicationController
-    before_action :authenticate_user!, :except => [:show, :index]  
+    before_action :authenticate_user!, :except => [:show, :index]
     
     def index
         @credits = Credit.all
     end
 
     def create
-        Credit.create(credit_params)
+        @credit = Credit.new(credit_params)
+
+        @credit.save
+
+        if @credit.save
+            flash[:success] = 'The credit has been added!'
+            redirect_to credits_path
+        else
+            render html: 'form'
+        end
        
-        redirect_to credits_path
+        
     end
 
     def new

@@ -16,6 +16,7 @@
 //= require bootstrap/dist/js/bootstrap.js
 //= require select2/dist/js/select2.js
 //= require bootstrap/js/dist/modal.js
+//= require toastr/build/toastr.min.js
 //= require_tree .
 
 $(document).ready(function() {
