@@ -1,24 +1,17 @@
-# README
+# credz
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a full stack site that allows the public to have access to view full song credits on a simple UI. The reason behind this as a music lover I miss the days of CD booklets where you'd have access to credit informaiton to music. This site is here to fill in that gap!
 
-Things you may want to cover:
+Built with:
 
-* Ruby version
+* Ruby / Ruby On Rails
 
-* System dependencies
+* Devise
 
-* Configuration
+* Bootstrap
 
-* Database creation
+* Select2
 
-* Database initialization
+* MySQL / PostrgreSQL
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Created by Alex G. Legaspi
