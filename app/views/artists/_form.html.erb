@@ -1,15 +1,15 @@
 <%= form_for @artist, remote: true do |f| %>
 
-
     <div>
         <%= f.label :artist_name %>
         <%= f.text_field :artist_name, class: 'form-control' %>
     </div>
 
     <br>
+
     <div>   
         <%= f.submit "Submit", class: 'btn btn-light' %>
     </div>
 
-
+  
 <% end %>

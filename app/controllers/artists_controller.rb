@@ -7,13 +7,21 @@ class ArtistsController < ApplicationController
 
     def create
 
-        @artist = Artist.create!(artist_params)
-    
-        respond_to do |format|
-            format.html { redirect_to new_credit_path }
-            format.js
-        end
+        @artist = Artist.new(artist_params)
         
+        @artist.save
+
+        if @artist.save
+            flash[:success] = 'The artist has been added!'
+            respond_to do |format|
+                format.html { redirect_to new_credit_path }
+                format.js
+            end
+        else
+            render json: {status: 'error', message: 'This arists already exists!'}
+             
+        end
+
     end
 
     def new
