@@ -10,16 +10,18 @@ class ArtistsController < ApplicationController
         @artist = Artist.new(artist_params)
         
         @artist.save
+        flash[:success] = "That artist was created."
 
         if @artist.save
-            flash[:success] = 'The artist has been added!'
             respond_to do |format|
-                format.html { redirect_to new_credit_path }
                 format.js
             end
         else
-            render json: {status: 'error', message: 'This arists already exists!'}
-             
+            flash[:error] = "Artist already exists."
+            respond_to do |format|
+                format.html { render 'artists/_form' }
+                format.json { render json: @artist.errors, status: :unprocessable_entity }
+            end
         end
 
     end

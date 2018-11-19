@@ -14,7 +14,8 @@ class CreditsController < ApplicationController
             flash[:success] = 'The credit has been added!'
             redirect_to credits_path
         else
-            render html: 'form'
+            format.html { render 'form' }
+            format.json { render json: @credit.errors, status: :unprocessable_entity }
         end
        
         
