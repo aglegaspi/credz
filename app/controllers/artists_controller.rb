@@ -10,9 +10,9 @@ class ArtistsController < ApplicationController
         @artist = Artist.new(artist_params)
         
         @artist.save
-        flash[:success] = "That artist was created."
-
+        
         if @artist.save
+            flash[:success] = "That artist was created."
             respond_to do |format|
                 format.js
             end
@@ -22,6 +22,7 @@ class ArtistsController < ApplicationController
                 format.html { render 'artists/_form' }
                 format.json { render json: @artist.errors, status: :unprocessable_entity }
             end
+            
         end
 
     end
