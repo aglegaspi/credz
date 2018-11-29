@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <br>
             
-            <%= link_to '[Create New Credit]', new_credit_path, class: "btn btn-outline-dark" %>
+            <%= link_to 'Create New Credit', new_credit_path, class: "btn btn-outline-dark" %>
      
 
             <br><br>
@@ -11,15 +11,20 @@
             <% @credits.each do |disp| %>
             
                 <div class="song_title">
-                <a class="nav-link" href="<%= credit_path(disp) %>"><%= disp.song_title %></a>
+                    <a class="nav-link" href="<%= credit_path(disp) %>">
+                    <%= disp.song_title %>
+                        <% if disp.mix_version? %> 
+                            (<%= disp.mix_version %>) 
+                        <% end %> 
+                    </a>
                 </div>
-                    <% if disp.mix_version? %> 
-                        (<%= disp.mix_version %>) 
-                    <% end %> 
+
+                <div class="artist_info">
                     by 
                     <% disp.artists.each do |artist|%>
                         <%= artist.artist_name %> 
                     <% end %> <br>
+                </div>
             <% end %>
 
         </div>

@@ -52,6 +52,12 @@ a {
    cursor: pointer;
  }
 
+ .nav-link {
+   display: block;
+   padding: 0;
+
+}
+
 .select2-container--default.select2-container--focus .select2-selection--multiple {
    border: 0px;
    outline: 0;
@@ -79,4 +85,19 @@ a {
    border: 0;
    border-radius: 0;
    width: 100%;
+}
+
+footer {
+   height: 100px;
+   background-color: white;
+   margin-top: 25px;
+   text-align: center;
+}
+
+.footer_content {
+   padding-top: 40px;
+}
+
+.artist_info {
+   padding-left: 20px;
 }
