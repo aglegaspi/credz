@@ -1,1 +1,17 @@
-<h1> <%= @credit.song_title %> </h1>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6"> 
+            <br>
+            
+                <h1> 
+                    <%= @credit.song_title %> 
+                </h1>
+                <h2>
+                    <% @credit.artists.each do |artist| %>
+                        <%= artist.artist_name %> 
+                    <% end %>
+                </h2>
+               
+        </div>
+    </div>
+</div>
